@@ -16,25 +16,29 @@ public class Worker {
 	
 	/* stage1 and stage2 represents two operations that operates on two different data items*/
 	private void stage1() {
-		try {
-			//making the thread sleep for 1 milisecond so as to emulate the behaviour that this task takes some time running in actual environment
-			Thread.sleep(1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		synchronized (lock1) {
+			try {
+				//making the thread sleep for 1 milisecond so as to emulate the behaviour that this task takes some time running in actual environment
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			list1.add(random.nextInt(100));	
 		}
-		list1.add(random.nextInt(100));
 	}
 	
 	private void stage2() {
-		try {
-			//making the thread sleep for 1 milisecond so as to emulate the behaviour that this task takes some time running in actual environment
-			Thread.sleep(1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		synchronized (lock2) {
+			try {
+				//making the thread sleep for 1 milisecond so as to emulate the behaviour that this task takes some time running in actual environment
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			list2.add(random.nextInt(100));	
 		}
-		list2.add(random.nextInt(100));
 	}
 	
 	public  void process() {
