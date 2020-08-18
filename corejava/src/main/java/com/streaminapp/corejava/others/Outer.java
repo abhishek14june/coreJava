@@ -9,9 +9,9 @@ public class Outer{
 	}
 	
 	class Inner extends Outer {
-		private void m() {
-			System.out.println("Inner.m()");
-		}
+		
+		 private void m() { System.out.println("Inner.m()"); }
+		 
 	}
 	
 	

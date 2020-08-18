@@ -14,7 +14,7 @@ public static void main(String[] args) {
 }
 }
 class A{
-	 void show() {
+	static void show() {
 		System.out.println("A.show()");
 	}
 	 void show2() {
@@ -23,7 +23,7 @@ class A{
 }
 class B extends A{
 	
-	 void show() {
+	 static void show() {
 		System.out.println("B.show()");
 	}
 	

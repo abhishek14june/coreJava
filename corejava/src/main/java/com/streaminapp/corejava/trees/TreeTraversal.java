@@ -72,7 +72,7 @@ public class TreeTraversal {
 			Node temp=q.poll();
 			System.out.print(temp.key+" ");
 			if(temp.left!=null) {
-				q.add(temp.left);
+				q.add(temp.left); 
 			}
 			if(temp.right!=null) {
 				q.add(temp.right);
